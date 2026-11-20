@@ -1,0 +1,15 @@
+# Foto yang di-upload pengguna saat testing — JANGAN ikut ke repo/deploy.
+app/static/uploads/*
+!app/static/uploads/.gitkeep
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Environment
+.env
+
+# OS
+.DS_Store
