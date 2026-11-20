@@ -187,6 +187,8 @@ p a:hover {
        title instead of overlapping it */
     .nav {
         position: relative;
+        top: auto; /* Reset the desktop offset, otherwise left:20px still pushes it right */
+        left: auto;
         z-index: 1;
         width: 100%;
         display: flex;
