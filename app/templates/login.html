@@ -21,7 +21,7 @@
                 <div class="image-container">
                     <img src="{{ url_for('static', filename='image/gambar1.jpg') }}" alt="Diagnostic Image" class="image">
                 </div>
-                <button class="photo-diagnostic">Diagnostic Photo <i class="fas fa-camera"></i></button>
+                <button class="photo-diagnostic" onclick="window.location.href='{{ url_for('main.prediksi') }}'">Diagnostic Photo <i class="fas fa-camera"></i></button>
             </div>
 
             <div class="right">
