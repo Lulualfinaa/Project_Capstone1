@@ -1,6 +1,6 @@
 from flask import Flask
 from .routes import main
-from .database import close_db
+from .database import close_db, ensure_users_table
 from mysql.connector import connect, Error
 import mysql.connector
 import os
@@ -40,6 +40,9 @@ def create_db(app):
             database=app.config['MYSQL_DB']
         )
         print("Koneksi ke MySQL berhasil!")
+        # Buat tabel users otomatis bila belum ada (idempotent).
+        # Gagal dengan aman di dalam ensure_users_table; app tetap jalan.
+        ensure_users_table(connection)
     except Error as e:
         print(f"Error saat menghubungkan ke MySQL: {e}")
         connection = None
