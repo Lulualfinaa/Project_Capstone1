@@ -172,9 +172,33 @@ p a:hover {
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
+    body {
+        height: auto; /* Let the page grow taller than the viewport */
+        min-height: 100vh;
+        padding: 16px 0; /* Keep the card from touching the screen edges */
+    }
+
     .container {
         flex-direction: column; /* Stack elements vertically */
         width: 90%; /* Adjust container width */
+    }
+
+    /* Mobile nav: in-flow (no longer absolute) so it sits above the
+       title instead of overlapping it */
+    .nav {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px 20px;
+        padding: 12px 0 4px;
+        margin-bottom: 4px;
+    }
+
+    .nav a {
+        margin-right: 0;
     }
 
     .content {
@@ -215,6 +239,10 @@ p a:hover {
 }
 
 @media (max-width: 480px) {
+    .nav a {
+        font-size: 14px; /* Keep the three links fitting on one line */
+    }
+
     .logo {
         font-size: 18px; /* Further reduce logo font size */
     }
